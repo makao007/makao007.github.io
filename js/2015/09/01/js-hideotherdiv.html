@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>web开发笔记</title>
-  <meta name="description" content="记录开发时用到的一些笔记，方便日后查找">
+  <title>JS点击隐藏已显示的div</title>
+  <meta name="description" content="当用户点击class为icon-more的图标时，div#note-menu-bar会显示出来； 显示出来后，当点击别的地方，该div就会隐藏。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://makao007.github.io/">
+  <link rel="canonical" href="http://makao007.github.io/js/2015/09/01/js-hideotherdiv.html">
   <link rel="alternate" type="application/rss+xml" title="web开发笔记" href="http://makao007.github.io/feed.xml" />
 </head>
 
@@ -54,39 +54,29 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">JS点击隐藏已显示的div</h1>
+    <p class="post-meta">Sep 1, 2015</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Sep 1, 2015</span>
+  <article class="post-content">
+    <p>当用户点击class为icon-more的图标时，div#note-menu-bar会显示出来； 显示出来后，当点击别的地方，该div就会隐藏。</p>
 
-        <h2>
-          <a class="post-link" href="/js/2015/09/01/js-hideotherdiv.html">JS点击隐藏已显示的div</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 1, 2015</span>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">click_body</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">toElement</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">div</span><span class="p">.</span><span class="nx">parents</span><span class="p">(</span><span class="s1">&#39;#note-menu-bar&#39;</span><span class="p">).</span><span class="nx">length</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="nx">div</span><span class="p">.</span><span class="nx">hasClass</span><span class="p">(</span><span class="s1">&#39;icon-more&#39;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#note-menu-bar&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hidden&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-        <h2>
-          <a class="post-link" href="/laravel/2015/09/01/laravel-json.html">Laravel 返回JSON格式的数据</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 1, 2015</span>
+<span class="nx">$</span><span class="p">(</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">click</span> <span class="p">(</span><span class="nx">click_body</span><span class="p">);</span>
+<span class="p">});</span></code></pre></div>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/09/01/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-  </ul>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 

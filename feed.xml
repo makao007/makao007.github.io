@@ -5,9 +5,69 @@
     <description>记录开发时用到的一些笔记，方便日后查找</description>
     <link>http://makao007.github.io/</link>
     <atom:link href="http://makao007.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Sep 2015 12:29:58 +0800</pubDate>
-    <lastBuildDate>Tue, 01 Sep 2015 12:29:58 +0800</lastBuildDate>
+    <pubDate>Tue, 01 Sep 2015 12:34:27 +0800</pubDate>
+    <lastBuildDate>Tue, 01 Sep 2015 12:34:27 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Git Note</title>
+        <description>&lt;h1 id=&quot;git-note&quot;&gt;&lt;code&gt;Git Note&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;修改git 的代理:
+git config –global http.proxy http://127.0.0.1:1080&lt;/p&gt;
+
+&lt;p&gt;删除这个代理:
+vi ~/.gitconfig
+删除其中的http 一行就可以了&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;remote&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//m&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;akao007&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@bitbucket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;org&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;makao007&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;lin lin&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contributors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;txt&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;contributors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;txt&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Initial commit with contributors&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;master&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkout&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;非常有用，丢弃本地的修改，以&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;上的为准&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pull&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;=============
+git init 
+echo “hello a” &amp;gt; a.txt
+echo “hello b” &amp;gt; b.txt
+git add .
+git commit -m “first commit”
+git branch
+git branch prod
+git branch test
+git branch dev
+git branch
+git checkout dev
+git branch&lt;/p&gt;
+
+&lt;p&gt;update a.txt
+git add .
+git commit -m “a.txt”&lt;/p&gt;
+
+&lt;p&gt;git branch master
+git merge dev    //将dev里面的改动提取出来，更新到当前分支&lt;/p&gt;
+
+&lt;p&gt;只取最后的14次的commit 
+git clone –depth=14 https://github.com/angular/angular-phonecat.git&lt;/p&gt;
+
+&lt;p&gt;丢弃本地的修改，在上一次的commit为准，再pull
+git reset –hard HEAD&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Sep 2015 20:32:00 +0800</pubDate>
+        <link>http://makao007.github.io/git/2015/09/01/git-note.html</link>
+        <guid isPermaLink="true">http://makao007.github.io/git/2015/09/01/git-note.html</guid>
+        
+        
+        <category>git</category>
+        
+      </item>
     
       <item>
         <title>JS点击隐藏已显示的div</title>
